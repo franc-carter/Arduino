@@ -4,8 +4,10 @@
 #include <ESP8266WiFi.h>
 #include <DHT.h>
 
-#define SSID "<SSID>"
-#define PASS "<PASSWD>"
+// This contains
+//const char* ssid = "mySSID";
+//const char* password = "MyWiFiPasswd";
+#include "Myauth.h"
 
 #define ROOM "Study"
 
@@ -50,7 +52,7 @@ void setup()
   pinMode(DHT_PIN, INPUT_PULLDOWN);
   
   dht.begin();
-  WiFi.begin(SSID, PASS);
+  WiFi.begin(ssid, password);
   
   while (WiFi.status() != WL_CONNECTED) {
     delay(100);
